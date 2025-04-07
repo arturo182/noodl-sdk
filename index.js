@@ -57,6 +57,7 @@ Noodl.defineNode = function(def) {
             displayName:(typeof def.inputs[key] === 'object')?def.inputs[key].displayName:undefined,
             group:(typeof def.inputs[key] === 'object')?def.inputs[key].group:undefined,
             default:(typeof def.inputs[key] === 'object')?def.inputs[key].default:undefined,
+            tooltip:(typeof def.inputs[key] === 'object')?def.inputs[key].tooltip:undefined,
             set:(function() { const _key = key; return function(value) {
                 this.inputs[_key] = value;
                 if(def.changed && typeof def.changed[_key] === 'function') {
