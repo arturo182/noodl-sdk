@@ -93,7 +93,9 @@ Noodl.defineNode = function(def) {
                 type:(typeof def.outputs[key] === 'object')?def.outputs[key].type:def.outputs[key],
                 displayName:(typeof def.outputs[key] === 'object')?def.outputs[key].displayName:undefined,
                 group:(typeof def.outputs[key] === 'object')?def.outputs[key].group:undefined,
-                getter:(function() { const _key = key; return function() {
+                getter:(typeof def.outputs[key] === 'object' && typeof def.outputs[key].getter === 'function')?def.outputs[key].getter:(function() {
+                    const _key = key;
+                    return function() {
                     return this.outputs[_key];
                 }})()
             }
