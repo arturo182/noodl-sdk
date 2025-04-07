@@ -1,6 +1,8 @@
 const _colors = {
     "purple":"component",
     "green":"data",
+    "blue":"visual",
+    "red": "javascript",
     "default":"default",
     "grey":"default"
 }
